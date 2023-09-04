@@ -1,21 +1,39 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>AgendamentosWeb</title>
 </head>
+
 <body>
 	<h1>Agendamentos de horário</h1>
-	<form method"post">
-		Nome: <input type="text" value="" name"nome"/>
-		Data: <input type="date" value="" data"data"/>
-		Horario: <input type="text" value="" data"horario"/>
-		Situacao: <input type="text" value="" data"situacao"/>
-		
-		<button type="submit">Salvar</button>
-		
-	</form>
-</body>
+	<h3><a href="/agendamentos" class="waves-effect waves-light btn"><i class="material-icons left">event</i>Lista de
+			Agendamentos</a></h3>
+	<form class="container" method="post">
+		<div class="row">
+			Nome: <input type="text" value="" name="nome" />
 
+			<div class="input-field col s6">
+				Data: <input type="date" value="" name="data" />
+			</div>
+			<div class="input-field col s6">
+				Horário: <input type="time" value="" name="hora" />
+			</div>
+		</div>
+
+		<button type="submit" class="waves-effect waves-light btn"><i
+				class="material-icons left">save</i>Salvar</button>
+	</form>
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
 
 </html>

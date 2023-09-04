@@ -1,12 +1,21 @@
-<html>
-	<body>
-		
-		<h3>Olá Maira te amo s2</h3>
-		
-		
-	</body>
-	
-	
-	
-	
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>AgendamentosWeb</title>
+</head>
+
+<body>
+
+    <h1>Lista de Agendamentos</h1>
+    <h3><a href="/cadastrarAgendamento">Cadastrar Agendamento</a></h3>
+
+    <div th:each="agendamento : ${agendamentos}">
+        <div class="row">
+            <p><span th:text="${agendamento.nome}"></span></p>
+            <p><span th:text="${agendamento.data}"></span></p>
+            <p><span th:text="${agendamento.hora}"></span></p>
+            <p><span th:text="${agendamento.situacao}"></span></p>
+        </div>
+    </div>
+</body>
 </html>

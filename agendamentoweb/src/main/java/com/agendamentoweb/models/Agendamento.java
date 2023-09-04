@@ -1,6 +1,31 @@
 package com.agendamentoweb.models;
 
-public class Agendamento {
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Agendamento implements Serializable{
+	
+	public Agendamento() {
+		this.situacao = "Agendado";
+	}
+	
+	private static final long serialVersionUID = 1L;
+	
+	public long getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
+	}
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private long codigo;
+	
 	private String nome;
 	private String data;
 	private String hora;
@@ -26,9 +51,6 @@ public class Agendamento {
 	}
 	public String getSituacao() {
 		return situacao;
-	}
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
 	}
 	
 	
